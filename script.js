@@ -10,7 +10,7 @@ const TRANSLATE_ENDPOINT = `https://translation.googleapis.com/language/translat
 const DETECT_LANGUAGE_ENDPOINT = `https://translation.googleapis.com/language/translate/v2/detect?key=${API_KEY}`;
 
 // 유튜브 검색 API 엔드포인트
-const YOUTUBE_SEARCH_ENDPOINT = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&maxResults=30`; // maxResults=30으로 변경
+const YOUTUBE_SEARCH_ENDPOINT = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&maxResults=12`; // maxResults=30으로 변경
 
 // 유튜브 채널 통계 API 엔드포인트
 const YOUTUBE_CHANNEL_ENDPOINT = `https://www.googleapis.com/youtube/v3/channels?key=${API_KEY}&part=statistics`;
@@ -144,7 +144,7 @@ async function displayVideos(videos, targetLang) {
     container.innerHTML = '';  // 기존 비디오 목록 초기화
 
     // 비디오 목록을 최대 30개로 제한
-    const limitedVideos = videos.slice(0, 8);
+    const limitedVideos = videos.slice(0, 12);
 
     // 비디오의 조회수와 구독자 수 가져오기
     const videosWithDetails = await Promise.all(limitedVideos.map(async video => {
