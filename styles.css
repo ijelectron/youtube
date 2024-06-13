@@ -1,0 +1,277 @@
+/* 전체적인 페이지 스타일을 설정 */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #ffffff;
+    padding: 50px;
+    margin: 0;
+}
+
+/* 중앙 컨테이너 스타일 설정 */
+.center-container {
+    text-align: center;
+    width: 100%;
+}
+
+/* 중앙 비디오 스타일 설정 */
+.center-video {
+    max-width: 100%; /* 비디오의 최대 너비를 100%로 설정 */
+    height: auto; /* 높이를 자동으로 조절 */
+    margin-bottom: 20px;
+    flex: 1; /* flex-grow 속성 추가 */
+}
+
+/* 수평 이미지 컨테이너 스타일 설정 */
+.horizontal-images {
+    display: none; /* 광고이미지 보이게 하려면 flex */
+    justify-content: center;
+    gap: 20px; /* 이미지 간격 설정 */
+    margin-bottom: 20px;
+}
+
+/* 수평 이미지 스타일 설정 */
+.horizontal-image {
+    width: 100px; /* 이미지 너비 설정 */
+    height: auto; /* 이미지 높이는 비율에 맞게 자동 조절 */
+    flex: 1; /* flex-grow 속성 추가 */
+}
+
+/* 중앙 이미지와 수평 이미지 간격 조절 */
+.center-image {
+    margin-bottom: -10px; /* 중앙 이미지와 수평 이미지 사이의 간격 설정 */
+}
+
+.horizontal-images {
+    margin-bottom: 20px; /* 수평 이미지와 검색창 사이의 간격 설정 */
+}
+
+/* 검색 입력창 스타일 설정 */
+#search-input {
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+    margin-right: 0;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 25px;
+    border: 0.8px solid #ffa600;
+    background-color: #ffffff;
+    color: #555450;
+    margin-bottom: -30px;
+}
+
+/* 버튼 컨테이너 스타일 설정 */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* 이미지 버튼 스타일 설정 */
+.img-button {
+    width: 120px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+}
+
+/* 비디오 컨테이너 스타일 설정 */
+#video-container {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* 비디오 항목 스타일 설정 */
+.video-entry {
+    position: relative; /* 추가: 슬라이드 버튼 위치를 위한 상대적 위치 설정 */
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: left;
+}
+
+/* 비디오 제목 스타일 설정 */
+.video-entry h3 {
+    font-size: 1em;
+    margin: 0 0 10px;
+}
+
+/* 비디오 설명 스타일 설정 */
+.video-entry p {
+    margin: 10px 0 0;
+}
+
+/* 비디오 정보 스타일 설정 */
+.video-info {
+    margin: 10px 0;
+}
+
+/* 비디오 버튼과 오디오 버튼 위치 설정 */
+.video-buttons {
+    position: absolute; /* 위치를 절대값으로 설정 */
+    bottom: 10px; /* 아래쪽에서 70px 위치에 설정 */
+    right: 95px; /* 오른쪽에서 20px 위치에 설정 */
+    display: flex;
+    gap: 30px;
+    display: none; /* 초기에는 버튼이 보이지 않도록 설정 */
+}
+
+.video-buttons button {
+    width: 50px; /* 이미지 버튼 너비 */
+    height: 50px; /* 이미지 버튼 높이 */
+    border: none;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+}
+
+/* 비디오 버튼 스타일 설정 */
+.video-button {
+    background-image: url('image/01_videobutton.png');
+}
+
+.video-button:active {
+    background-image: url('image/02_videobutton.png');
+}
+
+/* 오디오 버튼 스타일 설정 */
+.audio-button {
+    background-image: url('image/01_audiobutton.png');
+}
+
+.audio-button:active {
+    background-image: url('image/02_audiobutton.png');
+}
+
+/* 슬라이드 버튼 스타일 */
+.slide-button-container {
+    position: absolute; /* 위치를 절대값으로 설정 */
+    bottom: 10px; /* 아래쪽에서 10px 위치에 설정 */
+    right: 10px; /* 오른쪽에서 10px 위치에 설정 */
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* 슬라이드 버튼과 텍스트를 수직으로 배치 */
+    gap: 5px; /* 슬라이드 버튼과 텍스트 간격 설정 */
+}
+
+.slide-button {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+}
+
+.slide-button input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .5s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .5s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* 슬라이드 버튼 상태 텍스트 스타일 */
+.slide-button-container span {
+    font-size: 1em;
+    position: absolute;
+    color: #555354; /* 기본 텍스트 색상 설정 */
+    font-family: Arial, sans-serif; /* 폰트 설정 */
+    margin-bottom: 5px; /* 슬라이더와의 간격 설정 */
+}
+
+/* 컨테이너 박스 스타일 설정 */
+.radio-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; /* 버튼 간격 설정 */
+    width: auto; /* 너비 설정 */
+    margin: 40px auto; /* 중앙 정렬 및 상하 여백 설정 */
+    padding: 13px; /* 내부 패딩 설정 */
+    border-radius: 10px; /* 모서리 둥글게 설정 */
+    background-color: rgba(148, 149, 150, 0.1); /* 배경색 및 투명도 설정 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
+    visibility: hidden; /* 컨테이너를 보이지 않게 설정 */
+    /* 수정사항: 컨테이너의 visibility 속성을 hidden으로 설정하여 시각적으로 숨김 */
+}
+
+/* 라벨 및 라디오 버튼 스타일 설정 */
+.radio-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: visible; /* 라벨과 라디오 버튼을 보이게 설정 */
+    /* 수정사항: 자식 요소인 라벨과 라디오 버튼의 visibility를 visible로 설정하여 보이게 함 */
+}
+
+.radio-label input[type="radio"] {
+    display: none; /* 라디오 버튼 숨김 */
+}
+
+.radio-label .radio-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #c0c0c0;
+    border-radius: 20px; /* 버튼 테두리를 둥글게 설정 */
+    background-color: #ffffff;
+    color: #555450;
+    cursor: pointer;
+    transition: background-color 0.4s, color 0.4s; /* 전환 효과 추가 */
+    /* 버튼의 위치, 크기, 색상, 모양, 너비를 조절하는 스타일 */
+}
+
+/* 라디오 버튼 선택 시 스타일 변경 */
+.radio-label input[type="radio"]:checked + .radio-button {
+    background-color: #2ebdb6;
+    color: #f7f8f8;
+}
+
+/* 버튼 안의 텍스트 스타일 설정 */
+.radio-button {
+    font-size: 1.2em; /* 폰트 크기 설정 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    /* 버튼 이름의 위치, 크기, 폰트, 색상을 조절하는 스타일 */
+}

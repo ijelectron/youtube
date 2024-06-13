@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Translator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="center-container">
+        <a href="https://smartstore.naver.com/ijelectron316">
+            <!-- img 태그를 video 태그로 변경하고 logo.mp4 비디오 파일을 사용하도록 수정 -->
+            <video src="video/logo.mp4" class="center-video" autoplay loop muted></video> <!-- autoplay와 loop 속성 추가 -->
+        </a>
+        <br><br>
+        
+        <!-- 수평 이미지 컨테이너 추가 -->
+        <div class="horizontal-images">
+            <img src="image/ad_1.png" alt="partner1" class="horizontal-image">
+            <img src="image/ad_2.png" alt="partner2" class="horizontal-image">
+            <img src="image/ad_3.png" alt="partner3" class="horizontal-image">
+        </div>
+        <br><br>
+        
+        <input type="text" id="search-input" placeholder="Search in Your Language"> <br><br><br>
+
+        <!-- 컨테이너 박스 추가 -->
+        <div class="radio-button-container">
+            <!-- .radio-button-container: 버튼들을 포함하는 컨테이너 박스 -->
+            <label class="radio-label">
+                <input type="radio" name="options" value="new">
+                <span class="radio-button">Date</span>
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="options" value="subscribers">
+                <span class="radio-button">Subscriber</span>
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="options" value="views" checked>
+                <!-- 라디오 버튼의 초기 선택을 'Views'로 설정하기 위해 해당 input에 checked 속성을 추가함 -->
+                <span class="radio-button">View</span>
+            </label>
+        </div>
+        
+        <style>
+            /* 각 버튼의 기본 이미지 설정 */
+            .img-button.fr { background-image: url('image/france.png'); }
+            .img-button.ja { background-image: url('image/japan.png'); }
+            .img-button.en { background-image: url('image/english.png'); }
+            .img-button.ko { background-image: url('image/korea.png'); }
+            .img-button.zh { background-image: url('image/china.png'); }
+            .img-button.de { background-image: url('image/germany.png'); }
+    
+            /* 버튼이 눌렸을 때의 이미지 설정 */
+            .img-button.fr:active { background-image: url('image/france_pressed.png'); }
+            .img-button.ja:active { background-image: url('image/japan_pressed.png'); }
+            .img-button.en:active { background-image: url('image/english_pressed.png'); }
+            .img-button.ko:active { background-image: url('image/korea_pressed.png'); }
+            .img-button.zh:active { background-image: url('image/china_pressed.png'); }
+            .img-button.de:active { background-image: url('image/germany_pressed.png'); }
+        </style>
+
+        <div class="button-container">
+            <!-- 클래스 이름에 각 버튼의 국가 코드를 추가하여 스타일 적용 -->
+            <button class="img-button fr" onclick="translateAndSearch('fr')"></button>
+            <button class="img-button ja" onclick="translateAndSearch('ja')"></button>
+            <button class="img-button en" onclick="translateAndSearch('en')"></button>
+            <button class="img-button ko" onclick="translateAndSearch('ko')"></button>
+            <button class="img-button zh" onclick="translateAndSearch('zh')"></button>
+            <button class="img-button de" onclick="translateAndSearch('de')"></button>
+        </div><br>
+        
+        <div id="video-container"></div>
+    </div>
+</body>
+</html>
