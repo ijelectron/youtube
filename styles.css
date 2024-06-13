@@ -1,3 +1,5 @@
+/* styles.css */
+
 /* 전체적인 페이지 스타일을 설정 */
 body {
     font-family: Arial, sans-serif;
@@ -17,9 +19,9 @@ body {
     width: 100%;
 }
 
-/* 중앙 비디오 스타일 설정 */
-.center-video {
-    max-width: 100%; /* 비디오의 최대 너비를 100%로 설정 */
+/* 중앙 이미지 스타일 설정 */
+.center-image {
+    max-width: 100%;
     height: auto; /* 높이를 자동으로 조절 */
     margin-bottom: 20px;
     flex: 1; /* flex-grow 속성 추가 */
@@ -244,7 +246,7 @@ input:checked + .slider:before {
     flex-direction: column;
     align-items: center;
     visibility: visible; /* 라벨과 라디오 버튼을 보이게 설정 */
-    /* 수정사항: 자식 요소인 라벨과 라디오 버튼의 visibility를 visible로 설정하여 보이게 함 */
+    /* 수정사항: 자식 요소인 라벨과 라디오 버튼의 visibility를 visible로 설정하여 보이게 함 *//
 }
 
 .radio-label input[type="radio"] {
