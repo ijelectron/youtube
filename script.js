@@ -23,8 +23,8 @@ let currentSortOption = 'views';
 
 // 24개의 이미지 파일 경로 리스트
 const imageFiles = [
-    'image/ad_1.png', 'image/ad_2.png', 'image/ad_3.png', 'image/ad_4.png' 
-  //  'image/ad_5.png', 'image/ad_6.png', 'image/ad_7.png', 'image/ad_8.png',
+    'image/ad_1.png', 'image/ad_2.png', 'image/ad_3.png', 'image/ad_4.png', 
+    'image/ad_5.png', 'image/ad_6.png', 'image/ad_7.png', 'image/ad_8.png'
   //  'image/ad_9.png', 'image/ad_10.png', 'image/ad_11.png', 'image/ad_12.png',
   //  'image/ad_13.png', 'image/ad_14.png', 'image/ad_15.png', 'image/ad_16.png',
   //  'image/ad_17.png', 'image/ad_18.png', 'image/ad_19.png', 'image/ad_20.png',

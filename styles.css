@@ -62,7 +62,7 @@ body {
     border-radius: 25px;
     border: 1.8px solid #4b93f0;
     background-color: #ffffff;
-    color: #7c7a7a;
+    color: #3a3a3a;
     margin-bottom: -30px;
 }
 
@@ -126,9 +126,9 @@ body {
 .video-buttons {
     position: absolute; /* 위치를 절대값으로 설정 */
     bottom: 10px; /* 아래쪽에서 70px 위치에 설정 */
-    right: 95px; /* 오른쪽에서 20px 위치에 설정 */
+    right: 100px; /* 오른쪽에서 20px 위치에 설정 */
     display: flex;
-    gap: 30px;
+    gap: 40px;
     display: none; /* 초기에는 버튼이 보이지 않도록 설정 */
 }
 
@@ -208,7 +208,7 @@ body {
 }
 
 input:checked + .slider {
-    background-color: #54bef3;
+    background-color: #486bf5;
 }
 
 input:checked + .slider:before {
@@ -235,7 +235,7 @@ input:checked + .slider:before {
     padding: 13px; /* 내부 패딩 설정 */
     border-radius: 10px; /* 모서리 둥글게 설정 */
     background-color: rgba(148, 149, 150, 0.1); /* 배경색 및 투명도 설정 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 그림자 효과 추가 */
     visibility: hidden; /* 컨테이너를 보이지 않게 설정 */
     /* 수정사항: 컨테이너의 visibility 속성을 hidden으로 설정하여 시각적으로 숨김 */
 }
@@ -286,4 +286,5 @@ input:checked + .slider:before {
     height: auto;
     margin-bottom: 60px;
     margin-top: 0px;
+    color: #787778; /* 기본 텍스트 색상 설정 */
 }
