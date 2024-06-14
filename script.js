@@ -23,12 +23,22 @@ let currentSortOption = 'views';
 
 // 24개의 이미지 파일 경로 리스트
 const imageFiles = [
-    'image/ad_1.png', 'image/ad_2.png', 'image/ad_3.png', 'image/ad_4.png', 
-    'image/ad_5.png', 'image/ad_6.png', 'image/ad_7.png', 'image/ad_8.png',
-    'image/ad_9.png', 'image/ad_10.png', 'image/ad_11.png', 'image/ad_12.png',
-    'image/ad_13.png', 'image/ad_14.png', 'image/ad_15.png', 'image/ad_16.png',
-    'image/ad_17.png', 'image/ad_18.png', 'image/ad_19.png', 'image/ad_20.png',
-    'image/ad_21.png', 'image/ad_22.png', 'image/ad_23.png', 'image/ad_24.png'
+    'image/ad_1.png', 'image/ad_2.png', 'image/ad_3.png', 'image/ad_4.png' 
+  //  'image/ad_5.png', 'image/ad_6.png', 'image/ad_7.png', 'image/ad_8.png',
+  //  'image/ad_9.png', 'image/ad_10.png', 'image/ad_11.png', 'image/ad_12.png',
+  //  'image/ad_13.png', 'image/ad_14.png', 'image/ad_15.png', 'image/ad_16.png',
+  //  'image/ad_17.png', 'image/ad_18.png', 'image/ad_19.png', 'image/ad_20.png',
+  //  'image/ad_21.png', 'image/ad_22.png', 'image/ad_23.png', 'image/ad_24.png'
+];
+
+// 24개의 이미지 파일 링크 리스트
+const imageLinks = [
+    'https://ijelectron.modoo.at/?link=33k5h4x6', 'https://smartstore.naver.com/ijelectron316'//, 'https://link3.com', 'https://link4.com'
+  //  'https://link5.com', 'https://link6.com', 'https://link7.com', 'https://link8.com',
+  //  'https://link9.com', 'https://link10.com', 'https://link11.com', 'https://link12.com',
+  //  'https://link13.com', 'https://link14.com', 'https://link15.com', 'https://link16.com',
+  //  'https://link17.com', 'https://link18.com', 'https://link19.com', 'https://link20.com',
+  //  'https://link21.com', 'https://link22.com', 'https://link23.com', 'https://link24.com'
 ];
 
 // 번역 및 유튜브 검색을 처리하는 함수
@@ -265,18 +275,24 @@ async function displayVideos(videos, targetLang) {
 
         videoEntry.appendChild(slideButtonContainer); // 슬라이드 버튼 컨테이너를 비디오 항목에 추가
 
-        // 이미지 요소 생성 및 추가
-        const imageElement = document.createElement('img');
-        imageElement.src = imageFiles[i];  // 정렬된 순서에 따라 이미지 파일 경로 설정
-        imageElement.alt = 'Banner Ads : ijelectron316@naver.com';
-        imageElement.classList.add('video-image');
-        videoEntry.appendChild(imageElement);  // 이미지 요소를 비디오 항목에 추가
-
-        container.appendChild(videoEntry);  // 비디오 항목을 컨테이너에 추가
-
-        buttonContainer.style.display = 'flex';
-    }
-}
+         // 이미지 요소 생성 및 추가
+         const imageLink = document.createElement('a');  // 링크 요소 생성
+         imageLink.href = imageLinks[i];  // 링크 경로 설정
+         imageLink.target = '_blank';  // 새 창에서 열리도록 설정
+ 
+         const imageElement = document.createElement('img');
+         imageElement.src = imageFiles[i];  // 정렬된 순서에 따라 이미지 파일 경로 설정
+         imageElement.alt = 'Banner Ads : ijelectron316@naver.com';
+         imageElement.classList.add('video-image');
+ 
+         imageLink.appendChild(imageElement);  // 이미지 요소를 링크에 추가
+         videoEntry.appendChild(imageLink);  // 링크 요소를 비디오 항목에 추가
+ 
+         container.appendChild(videoEntry);  // 비디오 항목을 컨테이너에 추가
+ 
+         buttonContainer.style.display = 'flex';
+     }
+ }
 
 // 라디오 버튼의 선택에 따라 정렬 기준을 변경하는 이벤트 리스너 추가
 document.querySelectorAll('input[name="options"]').forEach(radio => {
