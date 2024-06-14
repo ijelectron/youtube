@@ -62,7 +62,7 @@ body {
     border-radius: 25px;
     border: 1.8px solid #4b93f0;
     background-color: #ffffff;
-    color: #4b4747;
+    color: #7c7a7a;
     margin-bottom: -30px;
 }
 
@@ -208,7 +208,7 @@ body {
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #54bef3;
 }
 
 input:checked + .slider:before {
@@ -276,4 +276,14 @@ input:checked + .slider:before {
     font-size: 1.2em; /* 폰트 크기 설정 */
     text-align: center; /* 텍스트 가운데 정렬 */
     /* 버튼 이름의 위치, 크기, 폰트, 색상을 조절하는 스타일 */
+}
+
+/* 추가된 이미지 스타일 설정 */
+.video-image {
+    display: inline-block;
+    margin: 20px auto; /* 중앙 정렬 */
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 60px;
+    margin-top: 0px;
 }
