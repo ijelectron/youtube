@@ -10,7 +10,7 @@ const TRANSLATE_ENDPOINT = `https://translation.googleapis.com/language/translat
 const DETECT_LANGUAGE_ENDPOINT = `https://translation.googleapis.com/language/translate/v2/detect?key=${API_KEY}`;
 
 // 유튜브 검색 API 엔드포인트
-const YOUTUBE_SEARCH_ENDPOINT = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&maxResults=4`; // maxResults=24으로 변경
+const YOUTUBE_SEARCH_ENDPOINT = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&maxResults=8`; // maxResults=24으로 변경
 
 // 유튜브 채널 통계 API 엔드포인트
 const YOUTUBE_CHANNEL_ENDPOINT = `https://www.googleapis.com/youtube/v3/channels?key=${API_KEY}&part=statistics`;
@@ -23,12 +23,12 @@ let currentSortOption = 'views';
 
 // 24개의 이미지 파일 경로 리스트
 const imageFiles = [
-    'image/ad_4.png', 'image/ad_5.png', 'image/ad_6.png', 'image/ad_7.png', 
-    'image/img5.jpg', 'image/img6.jpg', 'image/img7.jpg', 'image/img8.jpg',
-    'image/img9.jpg', 'image/img10.jpg', 'image/img11.jpg', 'image/img12.jpg',
-    'image/img13.jpg', 'image/img14.jpg', 'image/img15.jpg', 'image/img16.jpg',
-    'image/img17.jpg', 'image/img18.jpg', 'image/img19.jpg', 'image/img20.jpg',
-    'image/img21.jpg', 'image/img22.jpg', 'image/img23.jpg', 'image/img24.jpg'
+    'image/ad_1.png', 'image/ad_2.png', 'image/ad_3.png', 'image/ad_4.png', 
+    'image/ad_5.png', 'image/ad_6.png', 'image/ad_7.png', 'image/ad_8.png',
+    'image/ad_9.png', 'image/ad_10.png', 'image/ad_11.png', 'image/ad_12.png',
+    'image/ad_13.png', 'image/ad_14.png', 'image/ad_15.png', 'image/ad_16.png',
+    'image/ad_17.png', 'image/ad_18.png', 'image/ad_19.png', 'image/ad_20.png',
+    'image/ad_21.png', 'image/ad_22.png', 'image/ad_23.png', 'image/ad_24.png'
 ];
 
 // 번역 및 유튜브 검색을 처리하는 함수
@@ -154,15 +154,16 @@ async function displayVideos(videos, targetLang) {
     container.innerHTML = '';  // 기존 비디오 목록 초기화
 
     // 비디오 목록을 최대 24개로 제한
-    const limitedVideos = videos.slice(0, 4);
+    const limitedVideos = videos.slice(0, 8);
 
     // 비디오의 조회수와 구독자 수 가져오기
-    const videosWithDetails = await Promise.all(limitedVideos.map(async (video, index) => {
+    const videosWithDetails = await Promise.all(limitedVideos.map(async video => {
         const videoId = video.id.videoId;
         const channelId = video.snippet.channelId;
         const viewCount = await getVideoDetails(videoId);
         const subscriberCount = await getChannelDetails(channelId);
-        return { ...video, viewCount: parseInt(viewCount), subscriberCount: parseInt(subscriberCount), imageUrl: imageFiles[index] };
+        const date = new Date(video.snippet.publishedAt);
+        return { ...video, viewCount: parseInt(viewCount), subscriberCount: parseInt(subscriberCount), date };
     }));
 
     // 정렬 기준에 따라 비디오 목록 정렬
@@ -172,11 +173,13 @@ async function displayVideos(videos, targetLang) {
         } else if (currentSortOption === 'subscribers') {
             return b.subscriberCount - a.subscriberCount;
         } else if (currentSortOption === 'new') {
-            return new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt);
+            return b.date - a.date;
         }
     });
 
-    for (const video of videosWithDetails) {
+    // 각 비디오에 이미지를 삽입
+    for (let i = 0; i < videosWithDetails.length; i++) {
+        const video = videosWithDetails[i];
         const videoId = video.id.videoId;
 
         const videoElement = document.createElement('iframe');  // 비디오 iframe 요소 생성
@@ -264,8 +267,8 @@ async function displayVideos(videos, targetLang) {
 
         // 이미지 요소 생성 및 추가
         const imageElement = document.createElement('img');
-        imageElement.src = video.imageUrl;  // 이미지 파일 경로 설정
-        imageElement.alt = 'Sample Image';
+        imageElement.src = imageFiles[i];  // 정렬된 순서에 따라 이미지 파일 경로 설정
+        imageElement.alt = 'Banner Ads : ijelectron316@naver.com';
         imageElement.classList.add('video-image');
         videoEntry.appendChild(imageElement);  // 이미지 요소를 비디오 항목에 추가
 
