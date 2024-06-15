@@ -29,17 +29,17 @@ body {
 
 /* 수평 이미지 컨테이너 스타일 설정 */
 .horizontal-images {
-    display: flex; /* 광고이미지 보이게 하려면 flex */
-    justify-content: center;
+    display: flex; /* 컨테이너를 flex로 설정하여 수평 배열 가능하게 함 */
+    justify-content: center; /* 중앙 정렬 */
     gap: 20px; /* 이미지 간격 설정 */
     margin-bottom: 20px;
 }
 
 /* 수평 이미지 스타일 설정 */
 .horizontal-image {
-    width: 100px; /* 이미지 너비 설정 */
+    width: 100%; /* 이미지 너비를 부모 컨테이너의 100%로 설정 */
     height: auto; /* 이미지 높이는 비율에 맞게 자동 조절 */
-    flex: 1; /* flex-grow 속성 추가 */
+    flex: 1; /* flex-grow 속성을 1로 설정하여 공간을 균등하게 차지하도록 함 */
 }
 
 /* 중앙 이미지와 수평 이미지 간격 조절 */
@@ -291,11 +291,11 @@ input:checked + .slider:before {
 
 /* 방문자 수 표시 스타일 */
 .visitor-count {
-    font-size: 15px; /* 글씨 크기 조절 */
-    color: #525050; /* 글씨 색상 변경 */
+    font-size: 17px; /* 글씨 크기 조절 */
+    color: #383737; /* 글씨 색상 변경 */
     margin-bottom: 20px; /* 하단 여백 조정 */
     position: absolute; /* 절대 위치 */
-    top: 20%; /* 상단에서 50% 위치 */
+    top: 150px; /* 상단에서 50% 위치 */
     left: 50%; /* 좌측에서 50% 위치 */
     transform: translate(-50%, -120px); /* 중앙 정렬을 위한 조정, 검색창 바로 위 */
 }

@@ -9,20 +9,29 @@
 
 <body>
     <div class="center-container">
-        <a href="https://smartstore.naver.com/ijelectron316">
-            <img src="image/logo.gif" alt="Logo" class="center-image">
-        </a>
+        <img src="image/logo.gif" alt="Logo" class="center-image">
         <br><br>
         
+
         <!-- 수평 이미지 컨테이너 추가 -->
-        <div class="horizontal-images">
-            <img src="image/main_ad_1.png" alt="partner1" class="horizontal-image">
-            <img src="image/main_ad_2.png" alt="partner2" class="horizontal-image">
-            <img src="image/main_ad_3.png" alt="partner3" class="horizontal-image">
-        </div>
-        <br><br>
+<div class="horizontal-images">
+    <!-- 첫 번째 이미지에 대한 링크 추가 - 여기를 클릭하면 지정된 URL로 이동 -->
+    <a href="https://ijelectron.modoo.at/" target="_blank"> <!-- 링크와 새 탭에서 열기 기능 추가 -->
+        <img src="image/main_ad_1.png" alt="partner1" class="horizontal-image">
+    </a>
+    <!-- 두 번째 이미지에 대한 링크 추가 - 여기를 클릭하면 지정된 URL로 이동 -->
+    <a href="https://www.dorcea.kr/" target="_blank"> <!-- 링크와 새 탭에서 열기 기능 추가 -->
+        <img src="image/main_ad_2.png" alt="partner2" class="horizontal-image">
+    </a>
+    <!-- 세 번째 이미지에 대한 링크 추가 - 여기를 클릭하면 지정된 URL로 이동 -->
+    <a href="https://smartstore.naver.com/ijelectron316" target="_blank"> <!-- 링크와 새 탭에서 열기 기능 추가 -->
+        <img src="image/main_ad_3.png" alt="partner3" class="horizontal-image">
+    </a>
+</div>
+<br><br>
+
         
-        <input type="text" id="search-input" placeholder="Just, Search in Your Language!"> <br><br><br>
+        <input type="text" id="search-input" placeholder="Search in Your Language"> <br><br><br>
 
         <!-- 컨테이너 박스 추가 -->
         <div class="radio-button-container">
@@ -42,6 +51,7 @@
             </label>
         </div>
         
+
         <style>
             /* 각 버튼의 기본 이미지 설정 */
             .img-button.fr { background-image: url('image/france.png'); }
@@ -60,6 +70,7 @@
             .img-button.de:active { background-image: url('image/germany_pressed.png'); }
         </style>
 
+
         <div class="button-container">
             <!-- 클래스 이름에 각 버튼의 국가 코드를 추가하여 스타일 적용 -->
             <button class="img-button fr" onclick="translateAndSearch('fr')"></button>
@@ -70,8 +81,10 @@
             <button class="img-button de" onclick="translateAndSearch('de')"></button>
         </div><br>
         
+
 <!-- 방문자 수를 표시하는 div를 추가 -->
 <div id="visitor-count" class="visitor-count">방문자 수: 0</div> <!-- 추가된 코드 -->
+
 
         <div id="video-container"></div>
     </div>
