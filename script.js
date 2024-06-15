@@ -303,5 +303,17 @@ document.querySelectorAll('input[name="options"]').forEach(radio => {
     });
 });
 
+// 방문자 수를 카운트하는 스크립트
+document.addEventListener('DOMContentLoaded', function() {
+    var count = localStorage.getItem('visitorCount');
+    if (count) {
+        count = parseInt(count) + 1;
+    } else {
+        count = 1;
+    }
+    localStorage.setItem('visitorCount', count);
+    document.getElementById('visitor-count').innerText = 'Total Visitors      ' + count;
+});
+
 // 초기 검색 수행
 translateAndSearch(document.getElementById('search-input').value);
