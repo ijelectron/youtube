@@ -141,8 +141,8 @@ body {
 }
 
 .video-buttons button {
-    width: 50px; /* 이미지 버튼 너비 */
-    height: 50px; /* 이미지 버튼 높이 */
+    width: 60px; /* 이미지 버튼 너비 */
+    height: 60px; /* 이미지 버튼 높이 */
     border: none;
     cursor: pointer;
     background-size: cover;
