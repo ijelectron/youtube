@@ -315,5 +315,16 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('visitor-count').innerText = 'Total Visitors      ' + count;
 });
 
+// 번역 버튼을 클릭할 때 검색어가 없는 경우 새로고침
+function handleTranslateButtonClick(targetLang) {
+    const query = document.getElementById('search-input').value;
+    if (!query.trim()) {
+        location.reload();
+    } else {
+        translateAndSearch(targetLang);
+    }
+}
+
 // 초기 검색 수행
 translateAndSearch(document.getElementById('search-input').value);
+

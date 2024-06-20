@@ -300,10 +300,11 @@ input:checked + .slider:before {
 /* 방문자 수 표시 스타일 */
 .visitor-count {
     font-size: 17px; /* 글씨 크기 조절 */
-    color: #383737; /* 글씨 색상 변경 */
+    color: #4d4c4c; /* 글씨 색상 변경 */
     margin-bottom: 20px; /* 하단 여백 조정 */
     position: absolute; /* 절대 위치 */
     top: 150px; /* 상단에서 50% 위치 */
     left: 50%; /* 좌측에서 50% 위치 */
     transform: translate(-50%, -120px); /* 중앙 정렬을 위한 조정, 검색창 바로 위 */
 }
+

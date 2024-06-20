@@ -71,15 +71,14 @@
         </style>
 
 
-        <div class="button-container">
-            <!-- 클래스 이름에 각 버튼의 국가 코드를 추가하여 스타일 적용 -->
-            <button class="img-button fr" onclick="translateAndSearch('fr')"></button>
-            <button class="img-button ja" onclick="translateAndSearch('ja')"></button>
-            <button class="img-button en" onclick="translateAndSearch('en')"></button>
-            <button class="img-button ko" onclick="translateAndSearch('ko')"></button>
-            <button class="img-button zh" onclick="translateAndSearch('zh')"></button>
-            <button class="img-button de" onclick="translateAndSearch('de')"></button>
-        </div><br>
+<div class="button-container">
+    <button class="img-button fr" onclick="handleTranslateButtonClick('fr')"></button>
+    <button class="img-button ja" onclick="handleTranslateButtonClick('ja')"></button>
+    <button class="img-button en" onclick="handleTranslateButtonClick('en')"></button>
+    <button class="img-button ko" onclick="handleTranslateButtonClick('ko')"></button>
+    <button class="img-button zh" onclick="handleTranslateButtonClick('zh')"></button>
+    <button class="img-button de" onclick="handleTranslateButtonClick('de')"></button>
+</div><br>
         
 
 <!-- 방문자 수를 표시하는 div를 추가 -->
@@ -88,5 +87,6 @@
 
         <div id="video-container"></div>
     </div>
+
 </body>
 </html>
