@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Video Translator</title>
@@ -9,49 +10,51 @@
 
 <body>
     <div class="center-container">
+        <!-- 로고 이미지 삽입 -->
         <img src="image/logo.gif" alt="Logo" class="center-image">
         <br><br>
-        
 
         <!-- 수평 이미지 컨테이너 추가 -->
-<div class="horizontal-images">
-    <!-- 첫 번째 이미지에 대한 링크 추가 - 여기를 클릭하면 지정된 URL로 이동 -->
-    <a href="https://ijelectron.modoo.at/" target="_blank"> <!-- 링크와 새 탭에서 열기 기능 추가 -->
-        <img src="image/main_ad_1.png" alt="partner1" class="horizontal-image">
-    </a>
-    <!-- 두 번째 이미지에 대한 링크 추가 - 여기를 클릭하면 지정된 URL로 이동 -->
-    <a href="https://www.dorcea.kr/" target="_blank"> <!-- 링크와 새 탭에서 열기 기능 추가 -->
-        <img src="image/main_ad_2.png" alt="partner2" class="horizontal-image">
-    </a>
-    <!-- 세 번째 이미지에 대한 링크 추가 - 여기를 클릭하면 지정된 URL로 이동 -->
-    <a href="https://smartstore.naver.com/ijelectron316" target="_blank"> <!-- 링크와 새 탭에서 열기 기능 추가 -->
-        <img src="image/main_ad_3.png" alt="partner3" class="horizontal-image">
-    </a>
-</div>
-<br><br>
+        <div class="horizontal-images">
+            <!-- 첫 번째 이미지에 대한 링크 추가 - 여기를 클릭하면 지정된 URL로 이동 -->
+            <a href="https://ijelectron.modoo.at/" target="_blank">
+                <img src="ad/main_ad_1.png" alt="partner1" class="horizontal-image">
+            </a>
+            <!-- 두 번째 이미지에 대한 링크 추가 - 여기를 클릭하면 지정된 URL로 이동 -->
+            <a href="https://www.dorcea.kr/" target="_blank">
+                <img src="ad/main_ad_2.png" alt="partner2" class="horizontal-image">
+            </a>
+            <!-- 세 번째 이미지에 대한 링크 추가 - 여기를 클릭하면 지정된 URL로 이동 -->
+            <a href="https://smartstore.naver.com/ijelectron316" target="_blank">
+                <img src="ad/main_ad_3.png" alt="partner3" class="horizontal-image">
+            </a>
+        </div>
+        <br><br>
 
-        
-        <input type="text" id="search-input" placeholder="Search in Your Language"> <br><br><br>
+        <!-- 검색 입력란 추가 -->
+        <input type="text" id="search-input" placeholder="Search in Your Language">
+        <br><br><br>
 
         <!-- 컨테이너 박스 추가 -->
         <div class="radio-button-container">
-            <!-- .radio-button-container: 버튼들을 포함하는 컨테이너 박스 -->
+            <!-- Recent 옵션 라디오 버튼 -->
             <label class="radio-label">
                 <input type="radio" name="options" value="new">
                 <span class="radio-button">Recent</span>
             </label>
+            <!-- Subscriber 옵션 라디오 버튼 -->
             <label class="radio-label">
                 <input type="radio" name="options" value="subscribers">
                 <span class="radio-button">Subscriber</span>
             </label>
+            <!-- View 옵션 라디오 버튼 (기본 선택) -->
             <label class="radio-label">
                 <input type="radio" name="options" value="views" checked>
-                <!-- 라디오 버튼의 초기 선택을 'Views'로 설정하기 위해 해당 input에 checked 속성을 추가함 -->
                 <span class="radio-button">View</span>
             </label>
         </div>
-        
 
+        <!-- 버튼 이미지 스타일링 -->
         <style>
             /* 각 버튼의 기본 이미지 설정 */
             .img-button.fr { background-image: url('image/france.png'); }
@@ -70,19 +73,26 @@
             .img-button.de:active { background-image: url('image/germany_pressed.png'); }
         </style>
 
+        <!-- 언어 선택 버튼 컨테이너 -->
+        <div class="button-container">
+            <!-- 프랑스어 버튼 -->
+            <button class="img-button fr" onclick="handleTranslateButtonClick('fr')"></button>
+            <!-- 일본어 버튼 -->
+            <button class="img-button ja" onclick="handleTranslateButtonClick('ja')"></button>
+            <!-- 영어 버튼 -->
+            <button class="img-button en" onclick="handleTranslateButtonClick('en')"></button>
+            <!-- 한국어 버튼 -->
+            <button class="img-button ko" onclick="handleTranslateButtonClick('ko')"></button>
+            <!-- 중국어 버튼 -->
+            <button class="img-button zh" onclick="handleTranslateButtonClick('zh')"></button>
+            <!-- 독일어 버튼 -->
+            <button class="img-button de" onclick="handleTranslateButtonClick('de')"></button>
+        </div>
+        <br>
 
-<div class="button-container">
-    <button class="img-button fr" onclick="handleTranslateButtonClick('fr')"></button>
-    <button class="img-button ja" onclick="handleTranslateButtonClick('ja')"></button>
-    <button class="img-button en" onclick="handleTranslateButtonClick('en')"></button>
-    <button class="img-button ko" onclick="handleTranslateButtonClick('ko')"></button>
-    <button class="img-button zh" onclick="handleTranslateButtonClick('zh')"></button>
-    <button class="img-button de" onclick="handleTranslateButtonClick('de')"></button>
-</div><br>
-        
-
+        <!-- 비디오 컨테이너 추가 -->
         <div id="video-container"></div>
     </div>
-
 </body>
+
 </html>
