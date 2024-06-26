@@ -1,5 +1,3 @@
-// script.js
-
 // API 키 설정
 const API_KEY = 'AIzaSyAGFU9Gpn4bG4PK4NuZrQONvbNQjshvFiE';
 
@@ -241,11 +239,11 @@ async function displayVideos(videos, targetLang) {
 
         const button1 = document.createElement('button');
         button1.classList.add('video-button');
-        button1.addEventListener('click', () => downloadVideo(`https://www.youtube.com/watch?v=${videoId}`));  // button1 클릭 이벤트 추가
+        button1.addEventListener('click', () => openPopup('popup1'));  // button1 클릭 이벤트 수정: 팝업1 열기
 
         const button2 = document.createElement('button');
         button2.classList.add('audio-button');
-        button2.addEventListener('click', () => downloadAudio(`https://www.youtube.com/watch?v=${videoId}`));  // button2 클릭 이벤트 추가
+        button2.addEventListener('click', () => openPopup('popup2'));  // button2 클릭 이벤트 수정: 팝업2 열기
 
         buttonContainer.appendChild(button1);
         buttonContainer.appendChild(button2);
@@ -328,6 +326,16 @@ function handleTranslateButtonClick(targetLang) {
     } else {
         translateAndSearch(targetLang);
     }
+}
+
+// 팝업 창 열기
+function openPopup(popupId) {
+    document.getElementById(popupId).style.display = 'flex';
+}
+
+// 팝업 창 닫기
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = 'none';
 }
 
 // 초기 검색 수행

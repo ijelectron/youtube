@@ -94,7 +94,43 @@
         <div id="video-container"></div>
     </div>
 
+      <!-- 팝업 창 요소 추가 -->
+    <!-- 팝업 창 1 -->
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('popup1')">&times;</span>
+            <img src="image/popup_video.png" alt="Popup Image 1" width="480" height="160">
+            <br>
+            <!-- 라디오 버튼 추가 -->
+            <div class="popup-radio-buttons">
+                <label class="popup-radio-label">
+                    <input type="radio" name="popup1-options" value="option1">
+                    <span class="popup-radio-button">1080P</span>
+                </label>
+                <label class="popup-radio-label">
+                    <input type="radio" name="popup1-options" value="option2">
+                    <span class="popup-radio-button">720P</span>
+                </label>
+            </div>
+            <!-- 버튼 추가 -->
+            <button class="popup-button" id="popup1-button1">SAVE</button>
+            <button class="popup-button" id="popup1-button2" onclick="closePopup('popup1')">CANCEL</button>
+        </div>
+    </div>
 
+
+    <!-- 팝업 창 2 -->
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('popup2')">&times;</span>
+            <img src="image/popup_audio.png" alt="Popup Image 2" width="480" height="160">
+            <br>
+            <!-- 버튼 추가 -->
+            <button class="popup-button" id="popup2-button1">SAVE</button>
+            <button class="popup-button" id="popup2-button2" onclick="closePopup('popup2')">CANCEL</button> <!-- 수정된 부분 -->
+        </div>
+    </div>
+    
 </body>
 
 </html>
