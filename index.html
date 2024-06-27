@@ -113,7 +113,7 @@
                 </label>
             </div>
             <!-- 버튼 추가 -->
-            <button class="popup-button" id="popup1-button1">SAVE</button>
+            <button class="popup-button" id="popup1-button1" onclick="handleVideoDownload()">SAVE</button> <!-- 수정된 부분 -->
             <button class="popup-button" id="popup1-button2" onclick="closePopup('popup1')">CANCEL</button>
         </div>
     </div>
@@ -126,8 +126,8 @@
             <img src="image/popup_audio.png" alt="Popup Image 2" width="480" height="160">
             <br>
             <!-- 버튼 추가 -->
-            <button class="popup-button" id="popup2-button1">SAVE</button>
-            <button class="popup-button" id="popup2-button2" onclick="closePopup('popup2')">CANCEL</button> <!-- 수정된 부분 -->
+            <button class="popup-button" id="popup2-button1" onclick="handleAudioDownload()">SAVE</button> <!-- 수정된 부분 -->
+            <button class="popup-button" id="popup2-button2" onclick="closePopup('popup2')">CANCEL</button>
         </div>
     </div>
     

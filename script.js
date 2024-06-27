@@ -239,11 +239,17 @@ async function displayVideos(videos, targetLang) {
 
         const button1 = document.createElement('button');
         button1.classList.add('video-button');
-        button1.addEventListener('click', () => openPopup('popup1'));  // button1 클릭 이벤트 수정: 팝업1 열기
+        button1.addEventListener('click', () => {
+            document.getElementById('popup1-button1').setAttribute('data-video-id', videoId); // 비디오 ID 설정
+            openPopup('popup1');
+        });
 
         const button2 = document.createElement('button');
         button2.classList.add('audio-button');
-        button2.addEventListener('click', () => openPopup('popup2'));  // button2 클릭 이벤트 수정: 팝업2 열기
+        button2.addEventListener('click', () => {
+            document.getElementById('popup2-button1').setAttribute('data-video-id', videoId); // 비디오 ID 설정
+            openPopup('popup2');
+        });
 
         buttonContainer.appendChild(button1);
         buttonContainer.appendChild(button2);
@@ -336,6 +342,22 @@ function openPopup(popupId) {
 // 팝업 창 닫기
 function closePopup(popupId) {
     document.getElementById(popupId).style.display = 'none';
+}
+
+// 비디오 다운로드 핸들러
+function handleVideoDownload() {
+    const videoId = document.getElementById('popup1-button1').getAttribute('data-video-id'); // 비디오 ID 가져오기
+    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`; // 비디오 URL 생성
+    downloadVideo(videoUrl); // 비디오 다운로드 함수 호출
+    closePopup('popup1'); // 팝업 닫기
+}
+
+// 오디오 다운로드 핸들러
+function handleAudioDownload() {
+    const videoId = document.getElementById('popup2-button1').getAttribute('data-video-id'); // 비디오 ID 가져오기
+    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`; // 비디오 URL 생성
+    downloadAudio(videoUrl); // 오디오 다운로드 함수 호출
+    closePopup('popup2'); // 팝업 닫기
 }
 
 // 초기 검색 수행
